@@ -1,0 +1,224 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+html {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body > header {
+  background: #FFF;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 0 5%;
+  position: relative;
+}
+
+body > header menu menu span {
+  display: block;
+}
+
+body > header menu menuitem > .heading {
+  font-weight: bold;
+}
+
+body > header input[type="checkbox"],
+body > header input[type="reset"] {
+  display: none !important;
+}
+
+body > header > nav span { cursor: default; }
+
+body > header nav,
+body > header nav nav {
+  background: #D8F2E5;
+  font-size: 14px;
+  height: 100vh;
+  left: 0;
+  padding-top: 30px;
+  position: absolute;
+  top: 0;
+  transform: translateX(-300px);
+  transition: transform .8s ease-in-out;
+  width: 300px;
+  z-index: 999;
+}
+
+body > header nav > main,
+body > header nav nav > main {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 50px;
+  width: 100%;
+}
+
+body > header nav label {
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+}
+body > header nav label:focus { outline: none; }
+
+body > header nav label.menu-close,
+body > header nav label.menu-toggle {
+  background: #D8F2E5;
+  display: block;
+  height: 50px;
+  line-height: 0;
+  padding: 0;
+  position: absolute;
+  right: -50px;
+  text-indent: -9999px;
+  width: 50px;
+}
+
+body > header nav label.menu-close>span:after,
+body > header nav label.menu-close>span:before,
+body > header nav label.menu-toggle>span,
+body > header nav label.menu-toggle>span:after,
+body > header nav label.menu-toggle>span:before {
+  background: #000;
+  display: block;
+  height: 3px;
+  pointer-events: none;
+  transition: transform .4s ease-in-out,background-color .4s ease-in-out 0s;
+  width: 20px;
+}
+
+body > header nav label.menu-close>span,
+body > header nav label.menu-toggle>span {
+  display: block;
+  margin-left: 15px;
+  margin-top: 50%;
+  position: relative;
+}
+
+body > header nav label.menu-close>span:after,
+body > header nav label.menu-close>span:before,
+body > header nav label.menu-toggle>span:after,
+body > header nav label.menu-toggle>span:before {
+  content: "";
+  position: absolute;
+  transform: rotate(0) translateY(0);
+}
+
+body > header nav label.menu-close {
+  margin-top: 21px;
+  opacity: 0;
+  transition: all .4s ease-in;
+}
+
+body > header nav label.menu-close>span:after {
+  transform: rotate(45deg);
+}
+body > header nav label.menu-close>span:before {
+  transform: rotate(-45deg);
+}
+
+body > header nav label.menu-toggle { margin-top: -30px; }
+
+body > header nav label.menu-toggle>span:after {
+  transform: translateY(6px);
+}
+body > header nav label.menu-toggle>span:before {
+  transform: translateY(-6px);
+}
+
+body > header nav menu {
+  margin: 0;
+  padding: 0;
+}
+body > header nav menu menuitem {
+  display: block;
+  list-style: none;
+}
+body > header nav menu menuitem + menuitem {
+  border-top: 1px solid #AAA;
+}
+body > header nav menu menuitem > a,
+body > header nav menu menuitem > label,
+body > header nav menu menuitem > span {
+  display: block;
+  line-height: 30px;
+  padding: 15px 0;
+  text-decoration: none;
+}
+
+body > header nav menu menuitem > label:after {
+  content: "\00BB";
+  display: block;
+  float: right;
+  font-size: 150%;
+}
+
+body > header nav nav label.menu-toggle,
+body > header nav nav label.menu-toggle>span,
+body > header nav nav label.menu-toggle>span:after,
+body > header nav nav label.menu-toggle>span:before { background: none; }
+
+body > header input[type="checkbox"]:checked ~ nav { transform: translateX(0); }
+
+body > header input[type="checkbox"]:checked ~ nav label.menu-close {
+  opacity: 1;
+}
+
+body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:after,
+body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:before {
+  width: 14px;
+}
+body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:after {
+  transform: rotate(-45deg) translateY(-4px) translateX(4px);
+}
+body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:before {
+  transform: rotate(45deg) translateY(4px) translateX(4px);
+}
+
+@media (max-width:60em) {
+  h2 { padding: 0.5em 0; }
+}
+
+@media (min-width:40em) {
+  html{ font-size: 130%; }
+}
+
+@media (min-width:60em) {
+  html { font-size: 135%; }
+  h1 { font-size: 280%; }
+}
+
+@media (min-width:100em) {
+  h1 { font-size:300%; }
+}
+
+@media (min-width:160em) {
+  html { font-size: 160% }
+  h1 {
+    font-size: 320%;
+    padding: 1.75em 0 .8em 0;
+  }
+}
