@@ -41,14 +41,13 @@ I already had.
 
 ## Inspirations
 
-During our search, I came across [NavNav](https://navnav.co). This
-website is simply a collection of useful examples of responsive
-navigation solutions available on the internet. It is therefore a
-great resource to see many possible solutions for responsive navigation
-in one place.
+During my search, I came across [NavNav.co](https://navnav.co). This
+website is a collection of useful examples of responsive navigation
+solutions available on the internet. It is therefore a great resource
+to see many possible solutions for responsive navigation in one place.
 
-We came across [this example](https://codepen.io/Shven/pen/chKqD) on
-NavNav that fit all our needs listed above perfectly. The only
+I came across [this example](https://codepen.io/Shven/pen/chKqD) on
+NavNav.co that fit all our needs listed above perfectly. The only
 shortcoming I noticed with this example was its lack of ability to
 close the whole menu in one go, if the user is at a deeper nesting
 level.
@@ -423,6 +422,28 @@ that the close icon is visible only when the menu is visible.
 
 [See this](http://htmlpreview.github.com/?https://github.com/manish-in-java/hamburger-menu/blob/master/menu.html)
 in action.
+
+## Acknowledgements
+
+Neither the idea(s), nor the implementation for this solution are my
+own. I am grateful to a number people whose ideas I adapted to come up
+with the solution posted here.
+
+First and foremost, my sincere thanks to
+[Sven Aarts](https://twitter.com/shven), who published this
+[example](https://codepen.io/Shven/pen/chKqD), and which I adapted to
+create the solution published here.
+
+Next, I would like to thank [Will Boyd](https://twitter.com/lonekorean)
+for
+[this great article](https://codersblock.com/blog/checkbox-trickery-with-css/)
+on playing with HTML checkboxes using CSS. This article gave me the
+inspiration to add a "close" button to my solution that closes all
+open menus in one go.
+
+Finally, kudos to [Mills Digital LLC](http://www.bymills.com) for
+putting up NavNav.co and collecting all the awesome HTML, CSS and
+JavaScript solutions featured there.
 
 ## License
 This application and its associated source code in its entirety is being made
