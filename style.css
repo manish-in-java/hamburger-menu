@@ -55,17 +55,28 @@ body > header > nav span { cursor: default; }
 
 body > header nav,
 body > header nav nav {
-  background: #D8F2E5;
   font-size: 14px;
   height: 100vh;
-  left: 0;
   padding-top: 30px;
   position: absolute;
   top: 0;
-  transform: translateX(-300px);
   transition: transform .8s ease-in-out;
   width: 300px;
   z-index: 999;
+}
+
+body > header nav.left-navigation,
+body > header nav.left-navigation nav {
+  background: #4BE3F2;
+  left: 0;
+  transform: translateX(-300px);
+}
+
+body > header nav.right-navigation,
+body > header nav.right-navigation nav {
+  background: #F6EA53;
+  right: 0;
+  transform: translateX(300px);
 }
 
 body > header nav > main,
@@ -86,15 +97,25 @@ body > header nav label:focus { outline: none; }
 
 body > header nav label.menu-close,
 body > header nav label.menu-toggle {
-  background: #D8F2E5;
   display: block;
   height: 50px;
   line-height: 0;
   padding: 0;
   position: absolute;
-  right: -50px;
   text-indent: -9999px;
   width: 50px;
+}
+
+body > header nav.left-navigation label.menu-close,
+body > header nav.left-navigation label.menu-toggle {
+  background: #4BE3F2;
+  right: -50px;
+}
+
+body > header nav.right-navigation label.menu-close,
+body > header nav.right-navigation label.menu-toggle {
+  background: #F6EA53;
+  right: 300px;
 }
 
 body > header nav label.menu-close>span:after,
@@ -168,18 +189,34 @@ body > header nav menu menuitem > span {
   padding: 15px 0;
   text-decoration: none;
 }
+body > header nav.left-navigation menu menuitem > a,
+body > header nav.left-navigation menu menuitem > label,
+body > header nav.left-navigation menu menuitem > span {
+  text-align: left;
+}
+body > header nav.right-navigation menu menuitem > a,
+body > header nav.right-navigation menu menuitem > label,
+body > header nav.right-navigation menu menuitem > span {
+  text-align: right;
+}
 
 body > header nav menu menuitem > label:after {
-  content: "\00BB";
   display: block;
-  float: right;
   font-size: 150%;
+}
+body > header nav.left-navigation menu menuitem > label:after {
+  content: "\00BB";
+  float: right;
+}
+body > header nav.right-navigation menu menuitem > label:after {
+  content: "\00AB";
+  float: left;
 }
 
 body > header nav nav label.menu-toggle,
 body > header nav nav label.menu-toggle>span,
 body > header nav nav label.menu-toggle>span:after,
-body > header nav nav label.menu-toggle>span:before { background: none; }
+body > header nav nav label.menu-toggle>span:before { background: none !important; }
 
 body > header input[type="checkbox"]:checked ~ nav { transform: translateX(0); }
 
@@ -191,11 +228,28 @@ body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:afte
 body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:before {
   width: 14px;
 }
-body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:after {
+body > header input[type="checkbox"]:checked ~ nav.left-navigation label.menu-toggle > span:after {
   transform: rotate(-45deg) translateY(-4px) translateX(4px);
 }
-body > header input[type="checkbox"]:checked ~ nav label.menu-toggle > span:before {
+body > header input[type="checkbox"]:checked ~ nav.left-navigation label.menu-toggle > span:before {
   transform: rotate(45deg) translateY(4px) translateX(4px);
+}
+body > header input[type="checkbox"]:checked ~ nav.right-navigation label.menu-toggle > span:after {
+  transform: rotate(45deg) translateY(-8px) translateX(2px);
+}
+body > header input[type="checkbox"]:checked ~ nav.right-navigation label.menu-toggle > span:before {
+  transform: rotate(-45deg) translateY(8px) translateX(2px);
+}
+
+body > main {
+  margin: 0 5vw;
+}
+
+.introduction {
+  background: #F7F7F7;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 0.5em 0 rgba(153,153,153,1);
+  padding: 2em;
 }
 
 @media (max-width:60em) {
